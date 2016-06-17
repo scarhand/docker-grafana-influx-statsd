@@ -41,5 +41,10 @@ ADD grafana.ini /opt/grafana/conf/custom.ini
 # Configure supervisor
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+EXPOSE 3000
+EXPOSE 8125
+
+VOLUME /data
+VOLUME /aux
 
 ENTRYPOINT ["/aux/init.sh"]
